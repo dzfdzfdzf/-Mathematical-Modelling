@@ -1,0 +1,10 @@
+%XY=xlsread('C:/Users/asus/Desktop/raw_format_xlsx/20161017 (287).xlsx')
+XY=xlsread('C:/Users/asus/Desktop/raw_format_xlsx/20161017 (287).xlsx')
+%XY=importdata('C:/Users/asus/Desktop/DeleteFlyPoint/20161017 (287).txt')
+lon = XY(:,4); %经度
+lat = XY(:,5); %纬度
+webmap OpenStreetMap;
+wmline(lat, lon, 'Color', 'b', 'Width', 3);
+for i=1:length(lat)
+    wmmarker(lat(i),lon(i),'IconScale',0.4);
+end;

@@ -22,8 +22,6 @@ def cal(inflie):
         time=line.split(" ")[1]
         longitude = float(line.split(" ")[3])
         latitude = float(line.split(" ")[4])
-        #if isInSide(114.289882,30.55773,114.290062,30.558227,114.299296,30.552629,114.299655,30.552909,longitude,latitude):
-        #if isInSide(114.27811,30.55444,114.27832,30.55488,114.28747,30.54934,114.28772,30.54982,longitude,latitude):
         if isInSide(114.28354, 30.55238, 114.28341, 30.55218, 114.29277, 30.54731, 114.29265, 30.54711,longitude, latitude):
             hour=gethour(time)
             id=hour//3
