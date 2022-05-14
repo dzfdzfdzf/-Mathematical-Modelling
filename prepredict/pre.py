@@ -16,6 +16,8 @@ for i in range(0,8):
 for item in change:
     fit1 = SimpleExpSmoothing(item).fit()
     item.append(int(np.round(fit1.forecast(1))))
+    print(int(np.round(fit1.forecast(1))))
+
 date = ['17','18','19','20','21','22','23','24','25','26']
 tit=['0-3时','3-6时','6-9时','9-12时','12-15时','15-18时','18-21时','21-24时']
 id = [1,2,3,4,5,6,7,8,9,10]

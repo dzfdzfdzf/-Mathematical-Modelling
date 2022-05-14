@@ -32,7 +32,7 @@ def cal(inflie):
     return lis
 
 if __name__== "__main__":
-    inputdir_path="C:\\Users\\asus\\Desktop\\t3"
+    inputdir_path="C:\\Users\\asus\\Desktop\\loss_date"
     filelist=os.listdir(inputdir_path)
     ans=[]
     for name in filelist:

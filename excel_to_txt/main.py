@@ -8,10 +8,16 @@ def excel_to_txt(infile, outfile):
 
 
 if __name__ == '__main__':
-    inputdir_path = 'C:\\Users\\asus\\Desktop\\data2'
-    outputdir_path = 'C:\\Users\\asus\\Desktop\\data_format2'
+    # inputdir_path = 'C:\\Users\\asus\\Desktop\\data2'
+    # outputdir_path = 'C:\\Users\\asus\\Desktop\\data_format2'
+    # inputdir_path = 'C:\\Users\\asus\\Desktop\\DeleteStopPoint_xlsx'
+    # outputdir_path = 'C:\\Users\\asus\\Desktop\\DeleteStopPoint'
+    # inputdir_path = 'C:\\Users\\asus\\Desktop\\DeleteFlyPoint_xlsx'
+    # outputdir_path = 'C:\\Users\\asus\\Desktop\\DeleteFlyPoint'
+    inputdir_path = 'C:\\Users\\asus\\Desktop\\loss_xlsx'
+    outputdir_path = 'C:\\Users\\asus\\Desktop\\loss'
     fileList = os.listdir(inputdir_path)
     for name in fileList:
         inputfileTxt = os.path.join(inputdir_path, name)
-        outfileExcel = os.path.join(outputdir_path, name).replace('.xlsx', 'txt')
+        outfileExcel = os.path.join(outputdir_path, name).replace('.xlsx', '.txt')
         excel_to_txt(inputfileTxt, outfileExcel)

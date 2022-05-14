@@ -76,6 +76,8 @@ def neg2Point(file):
             v = dis / t
             if v*1.94 <= 2*max(data_list[i][7], data_list[j][7]):
                 check.append(True)
+            elif max(data_list[i][7], data_list[j][7]) <= 0.2:
+                check.append(True)
             else:
                 check.append(False)
                 neg_num = neg_num + 1
@@ -91,7 +93,7 @@ def txt_to_xlsx(filename1, filename2, outfile, sheetname):
     fr = codecs.open(filename1, 'r')
     wb = openpyxl.Workbook()
     ws = wb.active
-
+    #neg_point = stopPoint(filename2)[0]
     neg_point = neg2Point(filename2)[0]
     # ws = wb.create_sheet()
     cnt = 0
@@ -121,37 +123,20 @@ def txt_to_xlsx(filename1, filename2, outfile, sheetname):
 
 
 if __name__ == '__main__':
-    inputdir_path = 'C:\\Users\\asus\\Desktop\\data1.1'
-    # inputdir_path = 'C:\\Users\\asus\\Desktop\\data1.1'
+    # inputdir_path1 = 'C:\\Users\\asus\\Desktop\\raw_format'
+    # inputdir_path2 = 'C:\\Users\\asus\\Desktop\\raw_format_xlsx'
+    # fileList1 = os.listdir(inputdir_path1)
     # fileList2 = os.listdir(inputdir_path2)
-    fileList = os.listdir(inputdir_path)
-    # num = 0
-    # num2 = 0
-    # path='C:\\Users\\asus\\Desktop\\data\\20161017 (120).xlsx'
-    # #neg2Point(path)
-    # for name in fileList:
-    #     inputfileTxt = os.path.join(inputdir_path, name)
-    #     print(inputfileTxt)
-    #     print(neg2Point(inputfileTxt)[0])
-    #
-    # for name in fileList2:
-    #     inputfileTxt = os.path.join(inputdir_path2, name)
-    #     print(inputfileTxt)
-    #     num2 = num2 + neg2Point(inputfileTxt)[1]
-    # print(num)
-    # print(num2)
-    # #     num = num + stopPoint(inputfileTxt)
-    # # print(num)
-    # print(distanceCalculate(114.205147,30.45637,114.205733,30.456913))
-    inputdir_path1 = 'C:\\Users\\asus\\Desktop\\data_format2'
-    inputdir_path2 = 'C:\\Users\\asus\\Desktop\\data1.1'
-    outputdir_path = 'C:\\Users\\asus\\Desktop\\data1.2'
+    # outputdir_path = 'C:\\Users\\asus\\Desktop\\DeleteStopPoint_xlsx'
+    inputdir_path1 = 'C:\\Users\\asus\\Desktop\\DeleteStopPoint'
+    inputdir_path2 = 'C:\\Users\\asus\\Desktop\\DeleteStopPoint_xlsx'
     fileList1 = os.listdir(inputdir_path1)
     fileList2 = os.listdir(inputdir_path2)
+    outputdir_path = 'C:\\Users\\asus\\Desktop\\DeleteFlyPoint_xlsx'
     for i in range(len(fileList1)):
         inputfileTxt1 = os.path.join(inputdir_path1, fileList1[i])
         inputfileTxt2 = os.path.join(inputdir_path2, fileList2[i])
-        outfileExcel = os.path.join(outputdir_path, fileList2[i])
-        sheetname = fileList2[i]
+        outfileExcel = os.path.join(outputdir_path, fileList1[i]).replace('.txt', '.xlsx')
+        sheetname = fileList1[i].replace(".txt", '')
         print(sheetname)
         txt_to_xlsx(inputfileTxt1, inputfileTxt2,outfileExcel, sheetname)

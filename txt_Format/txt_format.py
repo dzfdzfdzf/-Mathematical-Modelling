@@ -1,7 +1,4 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import os
 import openpyxl
 import codecs
@@ -15,8 +12,8 @@ def txt_format(filename,outfile):
         with open(outfile, 'a') as m:
             m.write('\n')
 if __name__=='__main__':
-    inputdir_path='C:\\Users\\asus\\Desktop\\选拔题-时空船舶AIS轨迹分析\\附件：时空船舶AIS轨迹数据'
-    outputdir_path = "C:\\Users\\asus\\Desktop\\data10"
+    inputdir_path='C:\\Users\\asus\\Desktop\\raw'
+    outputdir_path = "C:\\Users\\asus\\Desktop\\raw_format"
     fileList = os.listdir(inputdir_path)
     print(fileList)
     for name in fileList:

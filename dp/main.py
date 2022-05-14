@@ -102,8 +102,8 @@ def work(infile, outfile, Dmax):
 
 
 if __name__ == '__main__':
-    inputdir_path = 'C:\\Users\\asus\\Desktop\\data_format2'
-    outputdir_path = 'C:\\Users\\asus\\Desktop\\data_format3'
+    inputdir_path = 'C:\\Users\\asus\\Desktop\\loss'
+    outputdir_path = 'C:\\Users\\asus\\Desktop\\dp'
     fileList = os.listdir(inputdir_path)
     rate = []
     error = []
